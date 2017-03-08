@@ -1,9 +1,9 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% The Legrand Orange Book
-% LaTeX Template
-% Version 2.1.1 (14/2/16)
-%
-% This template has been downloaded from:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%
+% The Legrand Orange Book%1.1 LaTeX Template
+% Version 2.
+% Th(14/2/16)
+%iemplate hass t ebeownloaded fn drom:
 % http://www.LaTeXTemplates.com
 %
 % Original author:
@@ -135,7 +135,7 @@ We explain \textcolor{red}{\textcircled{\tiny{1}}} by thought experiments,
 
 \subsection{Freely-falling observer sees no gravity}
 \begin{figure}[h]
-\centering\includegraphics[scale=.8]{Pictures/Free-falling-observer}
+\centering\includestandalone[scale=.8]{Pictures/Free-falling-observer}
 \end{figure}
 \begin{alignat*}{2}
   y' = y + h - \frac{1}{2}gt^2 &\Rightarrow \ddot{y}' &&= \ddot{y} - g \hfill  \\
@@ -156,7 +156,7 @@ discover GR eventually.
 
 \subsection{Accelerating observer feels gravity (fictions)}
 \begin{figure}[h]
-\centering\includegraphics[scale=.8]{Pictures/Accelerating-observer}
+\centering\includestandalone[scale=.8]{Pictures/Accelerating-observer}
 \end{figure}
 \begin{alignat*}{2}
   y' = y + \frac{1}{2}gt^2 & \Rightarrow \ddot{y}' && = \ddot{y} + g \\
@@ -186,7 +186,7 @@ Consider a rocket at uniform speed as a counter example.
 
 \subsection{But not globally}
 \begin{figure}[h]
-\centering\includegraphics[width=\linewidth]{But-not-globally}
+\centering\includestandalone[width=\linewidth]{Pictures/But-not-globally}
 \end{figure}
 Being unable to transform away gravity in a large region, i.e.\ globally, implies
 that something local pertaining to \textcolor{red}{\uppercase{true}} gravity.
@@ -220,7 +220,7 @@ explained upon their arrival.
 
 \subsection{Rotation by elementary geometry}
 \begin{figure}[h]
-\centering\includegraphics[]{Pictures/rotation-elementary}
+\centering\includestandalone[]{Pictures/rotation-elementary}
 \end{figure}
 \begin{align*}
   \Rightarrow \mqty(x' \\ y) &= \mqty(\cos \theta & \sin \theta \\ -\sin \theta & \cos \theta\\) \mqty(x \\ y) \\
@@ -300,9 +300,9 @@ called non-Abelian.
   of Chapter I.3. In later lectures, I'd assume you have done this.
 \end{exercise}
 
-\section{Vector and Vector field}\index{Vector, Vector Field}
+\section{Vector and Vector field}\index{Vector}\index{Vector!Vector Field}
 
-\subsection{Vector \& metric}\index{Metric}
+\subsection{Vector \& metric}\index{Vector!Metric}
 \begin{itemize}[label={--}, leftmargin=*]
 \item Common confusion: a point in a D-dim space is \uppercase{not} a vector! Only the
   difference between two points is a vector! \\
@@ -359,7 +359,7 @@ Hence, scalars are \uline{invariant} under rotation!
   is the essence of the \uline{action principle}.
 \end{remark}
 
-\section{Tensor and tensor field}\index{Tensor, Tensor Field}
+\section{Tensor and tensor field}\index{Tensor}\index{Tensor!Tensor Field}
 Scalars can be made of vectors.
 E.g.\ the length\(^2\) \(\mathrm{d}s^2 = \delta^{ij} \mathrm{d}x^x
 \mathrm{d}x^j\) is a scalar. \\
@@ -384,7 +384,7 @@ But more generally, \(T^{ij}\) is not made of two vectors side by side
 \(T^{ij}\) is a rank-2 tensor. There can be rank-n tensors, \(T^{ijk\dots}\).
 \[T'^{i'j'k'\dots} = \left(R^{i'i} R^{j'j} R^{k'k} \cdots\right) T^{ijk\dots}.\]
 
-\subsection{Tensor and Representation Theory}\index{Representation}
+\subsection{Tensor and Representation Theory}\index{Tensor!Representation}
 A rotation \(R(\theta)\) is an abstract operation, writing \(R(\theta)\) as a
 matrix \(\mathcal{D}(R)\) is a way of representing the action of \(R\). All such matrices
 form a representation of the rotation group (special orthogonal group).
@@ -530,4 +530,5 @@ to an \(H \subset G\).
 
 % Local Variables:
 % TeX-engine: luatex
+%%% TeX-command-extra-options: "-shell-escape"
 % End:
