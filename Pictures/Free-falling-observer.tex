@@ -1,0 +1,41 @@
+\documentclass{tikzstandalone}
+\begin{document}
+\begin{tikzpicture}[line width=2pt, blue,decoration={random steps, amplitude=.5pt,segment length=15pt}]
+  % arrowstyle
+  \tikzset{>={Straight Barb[length=8pt,width=8pt]}}
+  % axes
+  % \draw[help lines] (0,0) grid (10,10);
+  \coordinate [label=left:\Large\textit{y'}] (y') at (0,8);
+  \draw [<-,decorate] (y') -- (0,-1pt);
+  \draw [decorate]
+  [postaction={decorate,draw,line width=.8pt,decoration={border,amplitude=.6cm,segment length=8pt}}] (10,0) -- (0,0);
+  % h,y point
+  \coordinate [label=left:\Large\textit{h}] (h) at (0,4);
+  % y axis
+  \coordinate [label=left:\Large\textit{y}] (y) at (4,6);
+  \draw [<-,decorate] (y) -- ++(0,-2);
+  \draw [dashed,decorate] (h) -- ++ (4,0);
+  % elevator
+  \draw [decorate] (h) ++ (3,0) rectangle ++(4,3);
+  % ball
+  \coordinate (ball) at (5.5,5.5);
+  \filldraw (ball) circle [radius=.1cm];
+  \draw [->,decorate] (ball) -- ++(0,-.8);
+  \coordinate [label=right:\Large{a ball in the elevator}] (ballcom) at (7.5,6.8);
+  \draw [decorate]
+  [postaction={decorate,draw,decoration={bent,aspect=.3}}] (ball) ++ (0.2,0.2) -- (ballcom);
+  % acceleration
+  \draw [->,decorate] (7.5,5) -- ++(0,-2.5);
+  \coordinate [label=right:\Large{freely-falling elevator}] (accecom) at (7.5,4);
+  % equation
+  \node (heq) at (5,2) {\huge\(h-\frac{1}{2}gt^2\)};
+  \draw [->,decorate] (5,3) -- (5,4);
+  \draw [->,decorate] (5,1) -- (5,0);
+  % comment
+  \node (y'com) at (9,2.2) [label=right:\Large\textcolor{red}{\textit{y'} : observer rest on the ground}] {};
+  \node (ycom) at (9,1.2) [label=right:\Large\textcolor{red}{\textit{y}: observer in the elevator}] {};
+\end{tikzpicture}
+\end{document}
+% Local Variables:
+% TeX-engine: luatex
+% End:

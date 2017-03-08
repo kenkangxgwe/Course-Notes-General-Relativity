@@ -1,0 +1,533 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The Legrand Orange Book
+% LaTeX Template
+% Version 2.1.1 (14/2/16)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Mathias Legrand (legrand.mathias@gmail.com) with modifications by:
+% Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Compiling this template:
+% This template uses biber for its bibliography and makeindex for its index.
+% When you first open the template, compile it from the command line with the
+% commands below to make sure your LaTeX distribution is configured correctly:
+%
+% 1) pdflatex main
+% 2) makeindex main.idx -s StyleInd.ist
+% 3) biber main
+% 4) pdflatex main x 2
+%
+% After this, when you wish to update the bibliography/index use the appropriate
+% command above and make sure to compile with pdflatex several times
+% afterwards to propagate your changes to the document.
+%
+% This template also uses a number of packages which may need to be
+% updated to the newest versions for the template to compile. It is strongly
+% recommended you update your LaTeX distribution if you have any
+% compilation errors.
+%
+% Important note:
+% Chapter heading images should have a 2:1 width:height ratio,
+% e.g. 920px width and 460px height.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt,fleqn]{book} % Default font size and left-justified equations
+
+%----------------------------------------------------------------------------------------
+
+\input{structure} % Insert the commands.tex file which contains the majority of the structure behind the template
+
+\input{custom_style} % Insert the custom_style.tex file which contains the
+                     % custom part of the structure behind the template
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begingroup
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+\coordinate [below=12cm] (midpoint) at (current page.north);
+\node at (current page.north west)
+{\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=north west,inner sep=0pt] at (0,0) {\includegraphics[width=\paperwidth]{cover}}; % Background image
+\draw[anchor=north] (midpoint) node [fill=ocre!30!white,fill opacity=0.6,text opacity=1,inner sep=1cm]{\Huge\centering\bfseries\sffamily\parbox[c][][t]{\paperwidth}{\centering General Relativity\\[15pt] % Book title
+{\Large Notes Review}\\[20pt] % Subtitle
+{\huge Yidun Wan}}}; % Author name
+\end{tikzpicture}};
+\end{tikzpicture}
+\vfill
+\endgroup
+
+%----------------------------------------------------------------------------------------
+%	COPYRIGHT PAGE
+%----------------------------------------------------------------------------------------
+
+\newpage
+~\vfill
+\thispagestyle{empty}
+
+\noindent Copyright \copyright\ 2017 Yidun Wan\\ % Copyright notice
+
+\noindent \textsc{Organized by kenkangxgwe}\\ % Publisher
+
+\noindent \textsc{github.com/kenkangxgwe/course-notes}\\ % URL
+
+\noindent Licensed under the Creative Commons Attribution-NonCommercial 3.0 Unported License (the ``License''). You may not use this file except in compliance with the License. You may obtain a copy of the License at \url{http://creativecommons.org/licenses/by-nc/3.0}. Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \textsc{``as is'' basis, without warranties or conditions of any kind}, either express or implied. See the License for the specific language governing permissions and limitations under the License.\\ % License information
+
+\noindent \textit{First edition, Spring 2017} % Printing/edition date
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+%\usechapterimagefalse % If you don't want to include a chapter image, use this to toggle images off - it can be enabled later with \usechapterimagetrue
+
+\usechapterimagefalse
+% \chapterimage{nasa-small} % Table of contents heading image
+
+\pagestyle{empty} % No headers
+
+\tableofcontents % Print the table of contents itself
+
+\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
+
+\pagestyle{fancy} % Print headers again
+
+%----------------------------------------------------------------------------------------
+%	PART
+%----------------------------------------------------------------------------------------
+
+\part{Part One}
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER 1
+%----------------------------------------------------------------------------------------
+\abovedisplayskip=.5ex
+\belowdisplayskip=.5ex
+%\chapterimage{chapter_head_2.pdf} % Chapter heading image
+\chapter{Overview and Basics}
+
+\section{Equivalence Principal : a starter}\index{Equivalence Principal}
+What is the Equivalence Principal?
+\begin{emphbox}
+\begin{enumerate}[label=\textcolor{red}{\textcircled{\tiny{\arabic*}}}, leftmargin=*]
+\item Locally, gravitational field is equivalent to acceleration.\\
+  OR
+\item Locally, spacetime is flat.
+\end{enumerate}
+\end{emphbox}
+We explain \textcolor{red}{\textcircled{\tiny{1}}} by thought experiments,
+\textcolor{red}{\textcircled{\tiny{2}}} later.
+
+
+\subsection{Freely-falling observer sees no gravity}
+\begin{figure}[h]
+\centering\includegraphics[scale=.8]{Pictures/Free-falling-observer}
+\end{figure}
+\begin{alignat*}{2}
+  y' = y + h - \frac{1}{2}gt^2 &\Rightarrow \ddot{y}' &&= \ddot{y} - g \hfill  \\
+                               &\Rightarrow \ddot{y}  &&= \ddot{y}' + g \hfill \\
+                               &\                     &&= -g + g = 0 \hfill
+\end{alignat*}
+\begin{emphbox}
+  The observer in the elevator sees no gravity.
+\end{emphbox}
+\begin{remark}
+  The derivation is from our pesperctive to show that the observer in the
+  elevator indeed sees no gravity. \\
+  Nevertheless, the observer himself simply feels no gravity because hee sees
+  himself floating along with other objects in the elevator.
+\end{remark}
+Realizing this was in fact the happiest thought of Einstein, which led him to
+discover GR eventually.
+
+\subsection{Accelerating observer feels gravity (fictions)}
+\begin{figure}[h]
+\centering\includegraphics[scale=.8]{Pictures/Accelerating-observer}
+\end{figure}
+\begin{alignat*}{2}
+  y' = y + \frac{1}{2}gt^2 & \Rightarrow \ddot{y}' && = \ddot{y} + g \\
+                           & \Rightarrow \ddot{y}  && = y' -g        \\
+                           & \                     && = 0-g = -g
+\end{alignat*}
+\begin{emphbox}
+  The inside observer sees the ball falling to the floor and concludes there is
+  gravity acting on the ball.
+\end{emphbox}
+\begin{remark}
+  Of course the inside observer feels being attached to the floor too, in the
+  same way he feels on the Earth.
+  The outside observer however sees the rocket's floor rushing to a floating ball.
+\end{remark}
+  Now you see that the centrifugal force is kinda ``gravity''.
+
+\subsection{The equivalence principle is local}
+That is, locally gravity can be \uline{transformed} away, or ``created'' by
+transformations (acceleration).
+The transformation must be nonlinear.
+Consider a rocket at uniform speed as a counter example.
+\begin{exercise}
+  Think about a free particle in an Euclidean plane. Try to transform the
+  coordinates nonlinearly to any other coordinate system and see what you can get.
+\end{exercise}
+
+\subsection{But not globally}
+\begin{figure}[h]
+\centering\includegraphics[width=\linewidth]{But-not-globally}
+\end{figure}
+Being unable to transform away gravity in a large region, i.e.\ globally, implies
+that something local pertaining to \textcolor{red}{\uppercase{true}} gravity.
+cannot be transformed away because a global effect is an aggregation of local ones.
+\begin{emphbox}
+  Indeed! What cannot be transformed away locally is the \uwave{spacetime curvature},
+  which is the source of the tidal force.
+\end{emphbox}
+\begin{remark}
+  This also reflects the second form of the equivalence principle. But we shall
+  leave this for later.
+\end{remark}
+
+\subsection{Two implications of the E.P.\ }
+\begin{emphbox}
+  \begin{itemize}[label={--},leftmargin=*]
+  \item Gravity acts on everything uniformly.
+  \item Inertial mass = gravitational mass.
+  \end{itemize}
+\end{emphbox}
+%------------------------------------------------
+
+\section{Rotation in the Euclidean Plain}
+As I said, Einstein gravity and even modern theoretical physics is largely about
+invariance. But invariance under what and of what? In the rest of today's
+lecture, I shall introduce to you the two ingredients of invariances. Namely
+linear transformations and tensors. I shall consider only rotations as an
+example of linear transformations here. The linear transformations we will
+encounter in this course are merely generalizations of rotations, which will be
+explained upon their arrival.
+
+\subsection{Rotation by elementary geometry}
+\begin{figure}[h]
+\centering\includegraphics[]{Pictures/rotation-elementary}
+\end{figure}
+\begin{align*}
+  \Rightarrow \mqty(x' \\ y) &= \mqty(\cos \theta & \sin \theta \\ -\sin \theta & \cos \theta\\) \mqty(x \\ y) \\
+  v' &= R(\theta) v \\
+  \text{more explicitly,\quad} v'^i &= R(\theta)^{ij} v^j
+\end{align*}
+\(v\) is a \uwave{vector} as it transforms as a vector under rotation.
+\begin{remark}
+  This method can hardly be generalized to higher dimensions. Need a more
+  systematic way!
+\end{remark}
+
+\subsection{Infinitesimal rotation (generators)}\index{Infinitesimal Rotation}
+
+\subsubsection{Properties of \(R(\theta)\)}
+\begin{align*}
+  \abs{v'} = \abs{v} &\Rightarrow v^{\mathrm{T}} R^{\mathrm{T}} R V = V^{\mathrm{T}} V \\
+                     &\Rightarrow R^{\mathrm{T}} R = 1 \quad \text{\textcolor{red}{orthogonal matrix}}\\
+                     &\Rightarrow \det R = \pm 1
+\end{align*}
+But \(\det R = -1\) describes \uwave{reflections}. E.g.\ \(R=\mqty(\dmat{1, -1})\) is a reflection about the y-axis. \\
+\(\Rightarrow\) rotations satisfy \(\det R = 1\) \quad \textcolor{red}{special orthogonal}
+
+\subsubsection{Infinitesimal rotation}
+  \(\because \det R = 1\) \\
+  \(\therefore\) we can expand \(R = 1 + A + \cdots\) \quad higher order terms negligible
+\begin{align*}
+  \text{Then,}       &\quad R^{\mathrm{T}} R = 1                                                  \\
+                     &\Rightarrow (1+ A^{\mathrm{T}} + \cdots) (1 + A + \cdots) = 1               \\
+                     &\Rightarrow 1+A^{\mathrm{T}} + A + \cdots = 1                               \\
+                     &\Rightarrow A^{\mathrm{T}} = -A \quad \text{\textcolor{red}{antisymmetric}} \\
+  \text{But in 2-d,} &\ \text{any antisymmetric matrix is} \propto J = \mqty(\admat{1,-1})        \\
+                     &\Rightarrow A = \theta J                                                    \\
+                     &\Rightarrow R(\theta) = 1 + \theta J + \order{\theta^2}                     \\
+                     &\Rightarrow \text{for tiny \(\theta\),} \mqty(w' \\ y') = \mqty(x + \theta y \\ -\theta x + y) \quad \text{consistent with Taylor expanding}
+\end{align*}
+\(\quad x' = \cos \theta x + \sin \theta y\) \quad \( y' = -\sin \theta x + \cos \theta
+y\)\\
+\(\Rightarrow\) we can restore the rotation \(R(\theta)\) for finite \(\theta\)
+by exponentiating \(J\):
+\begin{align*}
+  R(\theta) = \lim_{N \to \infty} R\left( \frac{\theta}{N} \right)^N &= \lim_{N \to \infty} \left( 1 + \frac{\theta J}{N} \right)^N\\
+            \Rightarrow R(\theta)                                    &= \mathrm{e}^{\theta J} \\
+                                                                     &\Downarrow \text{Taylor expansion} \\
+                                                                     &= \mqty(\cos \theta & \sin \theta \\ -\sin \theta & \cos \theta)
+\end{align*}
+\begin{remark}
+  \(R(\theta)\) forms the group \(\mathrm{SO}(2) \simeq \mathrm{U}(1)\) \\
+  \(A(\theta)\) forms the Lie algebra \(\mathrm{so}(2)\)
+\end{remark}
+% ------------------------------------------------
+
+\section{Rotation in D-dimension}
+\begin{align*}
+  &R^{\mathrm{T}} R = 1,            \quad \det R = 1, \quad \\
+  &\Rightarrow A^{\mathrm{T}} = -A, \quad R = 1 + A + \cdots \quad \text{hold in any dimensions}
+\end{align*}
+
+\subsection{3-dimension}
+Obviously, any \(3 \times 3\) antisymmetric matrix \(A\) is a linear combination
+of
+\begin{align*}
+  &J_x=\mqty(\dmat{0,0&1\\-1&0}), \quad J_y = \mqty(\admat{-1,0,1}), \quad J_z = \mqty(\dmat{0&1\\-1&0,0}) \\
+  &\text{that is,}                \quad A = \theta_x J_x + \theta_y J_y + \theta_z J_z
+\end{align*}
+\begin{emphbox}
+  Caution: \(J_i J_j \neq J_j J_i\)      \\
+  e.g.\    \(J_x J_y - J_y J_x = - J_z\) \\
+  Rotation about different axis may not commute.
+\end{emphbox}
+This case, the Lie group \(\mathrm{SO}(3)\) and Lie algebra \(\mathrm{so}(3)\) are
+called non-Abelian.
+
+\subsection{D-dimension}
+\begin{exercise}
+  I urge you to try the generalization in D-dim. Or you can read the appendix 2
+  of Chapter I.3. In later lectures, I'd assume you have done this.
+\end{exercise}
+
+\section{Vector and Vector field}\index{Vector, Vector Field}
+
+\subsection{Vector \& metric}\index{Metric}
+\begin{itemize}[label={--}, leftmargin=*]
+\item Common confusion: a point in a D-dim space is \uppercase{not} a vector! Only the
+  difference between two points is a vector! \\
+  We commonly write \(\vec{v} = (x^1, x^2, x^3 ,\dots, x^D)^{\mathrm{T}}\) as a
+  vector but this is done by assuming that \(v\) stems from the origin. \\
+  It's better to write \(\vec{v} = \mqty(v^1\\v^2\\v^3\\\vdots\\v^D)\) as a column.
+\item Moreover, the infinitesimal difference between two points
+  \(\mqty(\mathrm{d}x^1 \\ \mathrm{d}x^2 \\ \vdots \\ \mathrm{d}x^D)\) is
+  certainly a vector.
+\item In the Euclidean space, the inner-product of two vectors
+  \(\vec{u}\),\(\vec{v}\) is \[\vec{u} \cdot \vec{v} = \sum_i u^i v^i =
+    \sum_{i,j} \delta^{ij} u^i v^j = \delta^ij u^i v^j \quad \text{\textcolor{red}{Einstein
+    summation}}\]
+  \(\delta^{ij}\) is called the \uline{metric} of the space. \\
+  \begin{remark}
+    More general metric will be introduced.
+  \end{remark}
+  The length\(^2\) of an infinitesimal vector is then
+  \[\mathrm{d}s^2 = \delta^{ij} \mathrm{d}x^i \mathrm{d}x^j\]
+  The orthogonality of \(R(\theta)\) becomes
+  \[\left(R^{\mathrm{T}}\right)^{ij} R^{jk} = \delta^{ik} = R^{ji} R^{jk}\]
+\item A vector in the Euclidean space \uline{transforms linearly under rotation}.
+  \[v^{ij} = R^{ij} v^j\]
+  Two vectors \(\vec{u}\) and \(\vec{v}\), \(\vec{u} \pm \vec{v}\) is a vector.
+  \(\vec{u} \cross \vec{v} = \mqty(u^2 v^3 - u^3 v^2 \\ u^3 v^1 - u^1 v^3 \\ u^1
+  v^2 - u^2 v^1)\) is a vector.
+  \begin{problem}
+    What about \(\mqty(u^2 v^3 \\ u^3 v^1 \\ u^1 v^2)\) ?
+  \end{problem}
+\item Vector field \\
+  A vector field \(\vec{v}(x)\) is a vector-valued function of the space. That
+  is, at each point \(x\), \(v(x)\) is a vector:
+  \(\vec{v}(x) = \mqty(v^1(x) \\ v^2(x) \\ \vdots \\ v^D(x)).\)
+\end{itemize}
+
+\subsection{Newtonian physics is invariant under rotation}
+\begin{align*}
+  \vec{F}           &= m \vec{a}           \\
+                    &\Downarrow            \\
+  R(\theta) \vec{F} &= m R(\theta) \vec{a} \\
+  \vec{F}'          &= m \vec{a}'
+\end{align*}
+\begin{emphbox}
+  Caution: This is in fact a covariance, i.e., both sides of the equation
+  transform in the same way! \\
+  What's invariant is the Newton's 2nd law of physics: acceleration is always
+  proportional to the force, and the proportionality factor is \(\frac{1}{m}\)!
+\end{emphbox}
+The above is true only if \(m\) doesn't change under \(R(\theta)\). We say \(m\)
+is a \uline{scalar}. \\
+Hence, scalars are \uline{invariant} under rotation!
+\begin{remark}
+  modern physics is keen in looking for invariants under transformations. This
+  is the essence of the \uline{action principle}.
+\end{remark}
+
+\section{Tensor and tensor field}\index{Tensor, Tensor Field}
+Scalars can be made of vectors.
+E.g.\ the length\(^2\) \(\mathrm{d}s^2 = \delta^{ij} \mathrm{d}x^x
+\mathrm{d}x^j\) is a scalar. \\
+But not all interesting scalars can be made of just vectors. More complicated
+objects are needed. Among these objects here we focus on those transform nicely
+under rotations, which are called \uline{tensors}.
+\begin{emphbox}
+  Slogan: A tensor is something that transforms like a tensor.
+\end{emphbox}
+\begin{remark}
+  Actually, tensors arise naturally. A vector is a spacial case of a tensor.
+  Naively, we can put two vectors \(\vec{n}\), \(\vec{v}\) side by side to make a
+  2-indexed object.
+  \begin{alignat*}{2}
+    & T^{ij} &&= u^i v^j \\
+    \Rightarrow & T'^{i'j'} &&= R^{i'i} u^i R^{j'j} v^j = R^{i'i} R^{j'j} T^{ij}
+  \end{alignat*}
+  Each index transforms under \uppercase{one} \(R(\theta)\). \textcolor{red}{This is the meaning of
+  ``transforms like a tensor.''}
+\end{remark}
+But more generally, \(T^{ij}\) is not made of two vectors side by side
+\(T^{ij}\) is a rank-2 tensor. There can be rank-n tensors, \(T^{ijk\dots}\).
+\[T'^{i'j'k'\dots} = \left(R^{i'i} R^{j'j} R^{k'k} \cdots\right) T^{ijk\dots}.\]
+
+\subsection{Tensor and Representation Theory}\index{Representation}
+A rotation \(R(\theta)\) is an abstract operation, writing \(R(\theta)\) as a
+matrix \(\mathcal{D}(R)\) is a way of representing the action of \(R\). All such matrices
+form a representation of the rotation group (special orthogonal group).
+\begin{example}
+  \(D = 3\), the matrices \(\mathrm{e}^{\theta_x J_x + \theta_y J_y + \theta_z
+    J_z} = \mathcal{D}(R), \quad \forall \theta_x, \theta_y, \theta_z \in
+  \mathbb{R}\), form a 3-dimensional \uline{representation} of
+  \(\textrm{SO}(3)\), in the sense that \(\mathcal{D}(R_1) \mathcal{D}(R_2) =
+  \mathcal{D}(R_1 R_2)\) \\
+  All 3-dimensional vectors \(v = \mqty(v^1 \\ v^2 \\
+  v^3)\) form the 3-d \uline{representation space} correspondingly. \\
+  3-d representation of \(\textrm{SO}(3)\) is the \uwave{fundamental} representation.
+\end{example}
+But \(\mathrm{so}(3)\) can have higher dimensional representations too.
+These are the \uwave{tensor representations}.\\
+Consider the rank-2 \(T^{ij}\), \(i,j,=1,2,3\). \\
+Arrange all 9 elements in a column array \(\mqty(T^{11} \\ T^{12} \\ T^{13} \\
+T^{21} \\ \vdots \\ \vdots \\ T^{33})\)
+\begin{align*}
+  T^{ij} \to T'^{i'j'} &= \underbrace{R^{i'i} R^{j'j}}_{\text{tensor product}} T^{ij} \\
+  &= \underbrace{\tilde{R}^{(i'j')(ij)}}_{9 \times 9\ \text{matrix}} T^{ij}
+\end{align*}
+\(\Rightarrow T^{ij}\) forms a 9-d representations of \(\mathrm{SO}(3)\).
+\begin{problem}
+  Is \(T^{ij}\) reducible?
+\end{problem}
+
+\subsection{Irreducible representations/tensor}
+\begin{itemize}
+\item \(T^{ij}\) has 9 elements. \\
+  Are they always mixed up by \(\tilde{R}\)?\\
+  \begin{align*}
+    T' = \tilde{R} T &= \left( \begin{array}{*{3}{c}}
+                                 \multicolumn{1}{l|}{} & &  \\ \cline{1-2}
+                                                       & \multicolumn{1}{|l|}{} &  \\ \cline{2-3}
+                                                       & &\multicolumn{1}{|l}{} \\
+                               \end{array} \right)
+    \left( \begin{array}{c}
+             \\ \hline
+             \\ \hline
+             \\
+           \end{array} \right)
+    \begin{array}{c}
+      \}\\
+      \}\\
+      \}
+    \end{array}
+    \begin{array}{c}
+      \text{elements transform} \\
+      \text{among each other}
+    \end{array} \\
+                     &\text{\textcolor{red}{block diagonal \(\sim\) reducible}}
+  \end{align*}
+  A block that cannot be reduced any further is an \uwave{irreducible
+    representation}.
+\item D-dim
+  \begin{align*}
+    \text{Consider} \ A^{ij}     &= T^{ij} - T^{ji}                                    \\
+    \text{Clearly} \ A^{ij}      &= - A^{ji}                                           \\
+    A'^{i'j'}                    &= R^{i'i} R^{j'j} T^{ij} - R^{j'i} R^{i'j} T^{ij}    \\
+                                 &= R^{i'i} R^{j'j} T^{ij} - R^{j'j} R^{i'i} T^{ji}    \\
+                                 &= R^{i'i} R^{j'j} \left( T^{ij} - T^{ji} \right)     \\
+                                 &= R^{i'i} R^{j'j} A^{ij}                             \\
+    \Rightarrow A^{ij} \         & \text{transform like a tensor!}                     \\
+                                 & \text{\uwave{antisymmetric tensor}}                 \\
+    \text{With}\                 & \frac{D(D-1)}{2}\ \text{elements}                   \\
+                                 &= 3 \quad \text{if}\ D = 3                           \\
+    A^{ij} \                     & \text{is reducible}                                 \\ \\
+    \text{Consider} \ S^{ij}     &= T^{ij} + T^{ji}                                    \\
+    \text{likewise,} \ S'^{i'j'} &= R^{i'i} R^{j'j} S^{ij}                             \\
+    \Rightarrow S^{ij} \         & \text{is a \uwave{symmetric tensor.}}               \\
+    \text{With}\                 & \frac{D(D+1)}{2} \ \text{elements}                  \\
+    \text{But}\ S^{ij}           & \ \text{is again reducible!}                        \\ \\
+    \text{Consider}\ S           &= S^{ii}, i \ \text{summed over}                     \\
+                         S'      &= R^{i'i} R^{i'j} S^{ij}                             \\
+                                 &= \left( R^{\mathrm{T}} \right)^{ii'} R^{i'j} S^{ij} \\
+                                 &= \delta^{ij} S^{ij} = S^{ii} = S                    \\
+    \Rightarrow S \              & \text{is a scalar and certainly irreducible.}       \\
+  \end{align*}
+  Now we can get rid of \(S\) from \(S^{ij}\): \\
+  let \(\tilde{S}^{ij} = S^{ij} - \delta^{ij} \frac{S}{D}\)
+  \begin{exercise}
+    how \(\tilde{S}^{ij} is irreducible.\)
+  \end{exercise}
+  \(\tilde{S}^{ij}\) is a \uwave{symmetric traceless tensor}. \\
+  With \textcolor{red}{\(\frac{D(D+1)}{2} - 1\) elements}. \\
+  \begin{align*}
+    \begin{array}{|c|c||c|c|c|}
+      \cline{2-5}
+      \multicolumn{1}{l|}{} & T^{ij} & A^{ij} & \tilde{S}^{ij} & S \\ \cline{2-5}
+      \multicolumn{1}{l|}{} & D^2 & \frac{D(D-1)}{2} & \frac{D(D+1)}{2} - 1 & 1 \\ \hline
+      D=3 & 9 & 3 & 5 & 1 \\ \hline
+      D=4& 16 & 6 & 9 & 1 \\ \hline
+    \end{array}
+  \end{align*}
+  \textcolor{red}{in \(D = 3\), \(A^{ij}\) is a vector representation actually! (isomorphic)}
+  \begin{align*}
+    D = 3,& \\
+    & 9 \times 9 \ \text{matrix}\ \tilde{R} = \left( \begin{array}{*{3}{c}}
+                                 \multicolumn{1}{l|}{3 \times 3} & &  \\ \cline{1-2}
+                                                                 & \multicolumn{1}{|l|}{5 \times 5} &   \\ \cline{2-3}
+                                                                 & &\multicolumn{1}{|l}{1 \times 1} \\
+                               \end{array} \right)
+  \end{align*}
+\end{itemize}
+
+\subsection{Restriction to a subgroup}
+An irreducible representation of a group \(G\) can be reducible when restricted
+to an \(H \subset G\).
+\begin{exercise}
+  If no time for this, leave it as an exercise to the students.
+\end{exercise}
+%----------------------------------------------------------------------------------------
+%	CHAPTER 2
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+\chapter*{Bibliography}
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{Bibliography}}
+\section*{Books}
+\addcontentsline{toc}{section}{Books}
+\printbibliography[heading=bibempty,type=book]
+\section*{Articles}
+\addcontentsline{toc}{section}{Articles}
+\printbibliography[heading=bibempty,type=article]
+
+%----------------------------------------------------------------------------------------
+%	INDEX
+%----------------------------------------------------------------------------------------
+
+\cleardoublepage
+\phantomsection
+\setlength{\columnsep}{0.75cm}
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{Index}}
+\printindex
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
+
+% Local Variables:
+% TeX-engine: luatex
+% End:
