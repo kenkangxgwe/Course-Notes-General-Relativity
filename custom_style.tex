@@ -1,0 +1,48 @@
+\usepackage{ulem}
+\usepackage{physics}
+\setlength{\intextsep}{.5ex}
+
+\colorlet{ocre}{black} % Define the orange color used for highlighting throughout the book
+\definecolor{darkgreen}{RGB}{0,128,0}
+
+\newmdenv[skipabove=7pt,
+skipbelow=7pt,
+rightline=false,
+leftline=true,
+topline=false,
+bottomline=false,
+linecolor=red,
+backgroundcolor=red!5,
+innerleftmargin=5pt,
+innerrightmargin=5pt,
+innertopmargin=5pt,
+leftmargin=0cm,
+rightmargin=0cm,
+linewidth=4pt,
+innerbottommargin=5pt]{rBox}
+
+\renewmdenv[skipabove=7pt,
+skipbelow=7pt,
+rightline=false,
+leftline=true,
+topline=false,
+bottomline=false,
+backgroundcolor=darkgreen!10,
+linecolor=darkgreen,
+innerleftmargin=5pt,
+innerrightmargin=5pt,
+innertopmargin=5pt,
+innerbottommargin=5pt,
+leftmargin=0cm,
+rightmargin=0cm,
+linewidth=4pt]{eBox}
+
+\newenvironment{emphbox}{\begin{rBox}}{\end{rBox}}
+
+\renewenvironment{remark}{\par\vspace{10pt}\small % Vertical white space above the remark and smaller font size
+\begin{list}{}{
+\leftmargin=35pt % Indentation on the left
+\rightmargin=25pt}\item\ignorespaces % Indentation on the right
+\makebox[-2.5pt]{\begin{tikzpicture}[overlay]
+\node[draw=blue!60,line width=1pt,circle,fill=blue!25,font=\sffamily\bfseries,inner sep=2pt,outer sep=0pt] at (-15pt,0pt){\textcolor{blue}{R}};\end{tikzpicture}} % Orange R in a circle
+\advance\baselineskip -1pt}{\end{list}\vskip5pt} % Tighter line spacing and white space after remark

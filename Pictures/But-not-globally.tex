@@ -1,0 +1,44 @@
+\documentclass{tikzstandalone}
+\begin{document}
+\begin{tikzpicture}[line width=2pt, blue,decoration={random steps, amplitude=.5pt,segment length=10pt}]
+  % arrowstyle
+  \tikzset{>={Straight Barb[length=8pt,width=8pt]}}
+  % axes
+  % \draw [help lines] (-10,-10) grid (10,10);
+  % Earth
+  \node (Earth) at (0,0) {\Large{Earth}};
+  \draw [draw] [postaction={decoration={markings, mark=between positions 0.1 and 1.0 step 0.11 with {\draw [->] (0,-2.5) -- (0,-1.2);}},decorate}] (0,0) circle [radius=2];
+  % Horizontal Human
+  \begin{scope}[shift={(8,-3)},scale=1.2]
+    \coordinate (head) at (0,5);
+    \coordinate (shoulder) at (0,4);
+    \coordinate (hop) at (0,1);
+    \draw (head) circle [radius=.8];
+    \draw [decorate] (head) ++ (0,-.8) -- (hop);
+    \draw [decorate] (shoulder) -- ++(1,-1);
+    \draw [decorate] (shoulder) -- ++(-1,-1);
+    \draw [decorate] (hop) -- (1,-1);
+    \draw [decorate] (hop) -- (-1,-1);
+  \end{scope}
+  % Vertical Human
+  \begin{scope}[shift={(-6,0)},rotate=90]
+    \coordinate (head) at (0,5) {};
+    \coordinate (shoulder) at (0,4) {};
+    \coordinate (hop) at (0,1) {};
+    \draw (head) circle [radius=.8];
+    \draw [decorate] (head)++(0,-.8) -- (hop);
+    \draw [decorate] (shoulder) -- ++(1,-1);
+    \draw [decorate] (shoulder) -- ++(-1,-1);
+    \draw [decorate] (hop) -- (1,-1);
+    \draw [decorate] (hop) -- (-1,-1);
+  \end{scope}
+  % comment
+  \tikzset{red};
+  \node (gravity) at (3.2,-4.8) [label=right:\Large{falls to the center}] {};
+  \node (transform) at (0,-6) [label=\Large{no way to transform away}] {};
+  \node (tidalforce) at (0,-7) [label=\Large{gravity on these giants \(\Leftarrow\) tidal force}] {};
+\end{tikzpicture}
+\end{document}
+% Local Variables:
+% TeX-engine: luatex
+% End:

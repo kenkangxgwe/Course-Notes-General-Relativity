@@ -1,0 +1,36 @@
+\documentclass{tikzstandalone}
+\begin{document}
+\begin{tikzpicture}[scale=.8,line width=2pt, blue,decoration={random steps, amplitude=.5pt,segment length=15pt}]
+  % arrowstyle
+  \tikzset{>={Straight Barb[length=8pt,width=8pt]}};
+  % axes
+  % \draw[help lines] (0,0) grid (10,10);
+  \coordinate [label=left:\Large\textit{y'}] (y') at (0,10);
+  \draw [<-,decorate] (y') -- (0,0) -- (8,0);
+  % rocket
+  \draw [decorate] (3,3) rectangle ++(3,4);
+  \draw [decorate] (3,7) -- ++(1.5,2) -- ++(1.5,-2);
+  \draw [postaction={decorate,draw,line width=.8pt,decoration={border,amplitude=.3cm,segment length=10,angle=90}}] (5.5,3) -- ++(-2.5,0);
+  % ball
+  \coordinate (ball) at (5,6);
+  \filldraw (ball) circle [radius=.1cm];
+  \node (ballcom1) at (7.5,7) [anchor=west,align=left] {\Large a ball inertial relative to \\ \Large the outside observer};
+  \draw [decorate,decoration={bent,aspect=.3}] (ball) ++ (0.2,0.2) -- (7.5,7);
+  % y axis
+  \node (y) at (4,5) [label=left:\Large\textit{y}] {};
+  \draw [<-,decorate] (y) -- ++(0,-2);
+  % acceleration
+  \draw [<-,decorate] (7.5,5.5) -- ++(0,-2.5);
+  \node (accecom1) at (7.5,4.2) [anchor=west,align=left]{\Large Rocket flying in this direction \\ \Large at acceleration \textit{g}};
+  % equation
+  \draw [<->,decorate] (5,0) -- (5,3);
+  \node (yeq) at (5,1.5) [label=right:\huge{\(\frac{1}{2}gt^2\)}] {};
+  % comment
+  \node (outerspace) at (4,9.5) {\Large{outer space}};
+  \tikzset{red};
+  \node (y'com) at (8.5,2) [anchor=west,align=left] {\Large\textit{y'}: outside observer at rest \\ \Large\textit{y}: inside observer};
+\end{tikzpicture}
+\end{document}
+% Local Variables:
+% TeX-engine: luatex
+% End:
