@@ -138,8 +138,8 @@ We explain \textcolor{red}{\textcircled{\tiny{1}}} by thought experiments,
 \centering\includestandalone[scale=.8]{Pictures/Free-falling-observer}
 \end{figure}
 \begin{alignat*}{2}
-  y' = y + h - \frac{1}{2}gt^2 &\Rightarrow \ddot{y}' &&= \ddot{y} - g \hfill  \\
-                               &\Rightarrow \ddot{y}  &&= \ddot{y}' + g \hfill \\
+  y' = y + h - \frac{1}{2}gt^2 &\Rightarrow dd ot{y}' &&= dd ot{y} - g \hfill  \\
+                               &\Rightarrow dd ot{y}  &&= dd ot{y}' + g \hfill \\
                                &\                     &&= -g + g = 0 \hfill
 \end{alignat*}
 \begin{emphbox}
@@ -159,8 +159,8 @@ discover GR eventually.
 \centering\includestandalone[scale=.8]{Pictures/Accelerating-observer}
 \end{figure}
 \begin{alignat*}{2}
-  y' = y + \frac{1}{2}gt^2 & \Rightarrow \ddot{y}' && = \ddot{y} + g \\
-                           & \Rightarrow \ddot{y}  && = y' -g        \\
+  y' = y + \frac{1}{2}gt^2 & \Rightarrow dd ot{y}' && = dd ot{y} + g \\
+                           & \Rightarrow dd ot{y}  && = y' -g        \\
                            & \                     && = 0-g = -g
 \end{alignat*}
 \begin{emphbox}
@@ -263,7 +263,7 @@ y\)\\
 by exponentiating \(J\):
 \begin{align*}
   R(\theta) = \lim_{N \to \infty} R\left( \frac{\theta}{N} \right)^N &= \lim_{N \to \infty} \left( 1 + \frac{\theta J}{N} \right)^N\\
-            \Rightarrow R(\theta)                                    &= \mathrm{e}^{\theta J} \\
+            \Rightarrow R(\theta)                                    &= \ee^{\theta J} \\
                                                                      &\Downarrow \text{Taylor expansion} \\
                                                                      &= \mqty(\cos \theta & \sin \theta \\ -\sin \theta & \cos \theta)
 \end{align*}
@@ -310,7 +310,7 @@ called non-Abelian.
   vector but this is done by assuming that \(v\) stems from the origin. \\
   It's better to write \(\vec{v} = \mqty(v^1\\v^2\\v^3\\\vdots\\v^D)\) as a column.
 \item Moreover, the infinitesimal difference between two points
-  \(\mqty(\mathrm{d}x^1 \\ \mathrm{d}x^2 \\ \vdots \\ \mathrm{d}x^D)\) is
+  \(\mqty(\dd x^1 \\ \dd x^2 \\ \vdots \\ \dd x^D)\) is
   certainly a vector.
 \item In the Euclidean space, the inner-product of two vectors
   \(\vec{u}\),\(\vec{v}\) is \[\vec{u} \cdot \vec{v} = \sum_i u^i v^i =
@@ -321,7 +321,7 @@ called non-Abelian.
     More general metric will be introduced.
   \end{remark}
   The length\(^2\) of an infinitesimal vector is then
-  \[\mathrm{d}s^2 = \delta^{ij} \mathrm{d}x^i \mathrm{d}x^j\]
+  \[\dd s^2 = \delta^{ij} dd x^i dd x^j\]
   The orthogonality of \(R(\theta)\) becomes
   \[\left(R^{\mathrm{T}}\right)^{ij} R^{jk} = \delta^{ik} = R^{ji} R^{jk}\]
 \item A vector in the Euclidean space \uline{transforms linearly under rotation}.
@@ -361,8 +361,8 @@ Hence, scalars are \uline{invariant} under rotation!
 
 \section{Tensor and tensor field}\index{Tensor}\index{Tensor!Tensor Field}
 Scalars can be made of vectors.
-E.g.\ the length\(^2\) \(\mathrm{d}s^2 = \delta^{ij} \mathrm{d}x^x
-\mathrm{d}x^j\) is a scalar. \\
+E.g.\ the length\(^2\) \(dd s^2 = \delta^{ij} dd x^x
+dd x^j\) is a scalar. \\
 But not all interesting scalars can be made of just vectors. More complicated
 objects are needed. Among these objects here we focus on those transform nicely
 under rotations, which are called \uline{tensors}.
@@ -389,7 +389,7 @@ A rotation \(R(\theta)\) is an abstract operation, writing \(R(\theta)\) as a
 matrix \(\mathcal{D}(R)\) is a way of representing the action of \(R\). All such matrices
 form a representation of the rotation group (special orthogonal group).
 \begin{example}
-  \(D = 3\), the matrices \(\mathrm{e}^{\theta_x J_x + \theta_y J_y + \theta_z
+  \(D = 3\), the matrices \(\ee^{\theta_x J_x + \theta_y J_y + \theta_z
     J_z} = \mathcal{D}(R), \quad \forall \theta_x, \theta_y, \theta_z \in
   \mathbb{R}\), form a 3-dimensional \uline{representation} of
   \(\textrm{SO}(3)\), in the sense that \(\mathcal{D}(R_1) \mathcal{D}(R_2) =
@@ -501,19 +501,47 @@ to an \(H \subset G\).
 %----------------------------------------------------------------------------------------
 %	CHAPTER 2
 %----------------------------------------------------------------------------------------
-\chapter{Tensors and curved spaces \\w/o formal differential geometry}
+\chapter{Tensors and curved spaces \normalsize{without formal differential geometry}}
 
 \section{Metric}\index{Metric}
 Recall the length element in D-dim Euclidean space \\
-\begin{align}
-  \mathrm{d} \tilde{s} &= \delta^{ij} \mathrm{d} x^i \mathrm{d} x^j \\
-                       & \textcolor{red}{\Downarrow \text{use Gravity letters hereafter}}
-                       &= \delta^{\mu \nu} \mathrm{d} x^\mu \mathrm{d} x^\nu
-                       &\ \textcolor{red}{\uparrow \text{we call this a \uline{metric}}}
+\begin{align*}
+  \dd \tilde{s} &= \delta^{ij} \dd x^i \dd x^j \\
+                       & \textcolor{red}{\Downarrow \text{use Gravity letters hereafter}} \\
+                       &= \delta^{\mu \nu} \dd x^\mu \dd x^\nu \\
+                       &\ \textcolor{red}{\uparrow \text{we call this a \uline{metric}}} \\
+\end{align*}
+The Euclidean space can have many metrics related by coordinate
+tranformations.\\
+\begin{example}
+  \begin{align*}
+    \text{2D plane,\ } & x,y \mapsto r,\theta \\
+                       & x = r \cos \theta, y = r \sin \theta \\
+    \Rightarrow & \dd x = \cos \theta \dd r - r \sin \theta \dd \theta, \dd y = \sin \theta \dd r + r \cos \theta \dd \theta
+  \end{align*}
+  \begin{align*}
+    \Rightarrow & \dd s^2 = \dd x^2 + \dd y^2 \\
+                & = (\cos \theta \dd r - r \sin \theta \dd \theta)^2 + (\sin \theta \dd r + r \cos \theta \dd \theta)^2 \\
+                & = \dd r^2 + r^2 \dd \theta^2 \\
+                & = g_{\mu\nu} \dd x^\mu \dd x^\nu  \quad \textcolor{red}{x' = r, x^2 = \theta}\\
+                & \textcolor{red}{\text{note the upper \& lower indeices}} \\
+                & \textcolor{blue}{\left[ g_{\mu\nu} \right] = \mqty(\dmat{1,r^2})}
+  \end{align*}
+\end{example}
+Why upper \& lower? \\
+\begin{align*}
+  \text{For any vector\ } & v, \abs{v}^2 = \delta^{\mu\nu} v^\mu v^\nu \\
+  \text{but} \quad &\left[ \delta^{\mu\nu} \right] v = \mqty(\dmat{1,1}) \mqty(v^1 \\ v^2) = \mqty(v^1 \\ v^2), \\
+  \text{however} \quad & \abs{v}^2 = g_{\mu\nu} v^\mu v^\nu \\
+                          & \left[ g_{\mu\nu} \right] v = \mqty(\dmat{1,r^2}) \mqty(v^r \\ v^\theta) = \mqty(v^r \\ r^2 v^\theta) \neq v
+\end{align*}
+\textcolor{red}{It's better to denote \(g_{\mu\nu} v^\nu = v\mu\)}
+\begin{problem}
+  There is a catch here! What is it? I will explain shortly.
+\end{problem}
+\begin{remark}
 
-\end{align}
-
-
+\end{remark}
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
 %----------------------------------------------------------------------------------------
@@ -542,5 +570,6 @@ Recall the length element in D-dim Euclidean space \\
 \end{document}
 
 % Local Variables:
-% TeX-engine: luatex
+% TeX-engine: pdftex
+% TeX-command-extra-options: "-shell-escape"
 % End:
