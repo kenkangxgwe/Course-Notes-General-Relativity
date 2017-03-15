@@ -62,7 +62,7 @@
 \coordinate [below=12cm] (midpoint) at (current page.north);
 \node at (current page.north west)
 {\begin{tikzpicture}[remember picture,overlay]
-\node[anchor=north west,inner sep=0pt] at (0,0) {\includegraphics[width=\paperwidth]{cover}}; % Background image
+    \node[anchor=north west,inner sep=0pt] at (0,0) {\includegraphics[width=\paperwidth]{Pictures/cover}}; % Background image
 \draw[anchor=north] (midpoint) node [fill=ocre!30!white,fill opacity=0.6,text opacity=1,inner sep=1cm]{\Huge\centering\bfseries\sffamily\parbox[c][][t]{\paperwidth}{\centering General Relativity\\[15pt] % Book title
 {\Large Notes Review}\\[20pt] % Subtitle
 {\huge Yidun Wan}}}; % Author name
@@ -535,13 +535,66 @@ Why upper \& lower? \\
   \text{however} \quad & \abs{v}^2 = g_{\mu\nu} v^\mu v^\nu \\
                           & \left[ g_{\mu\nu} \right] v = \mqty(\dmat{1,r^2}) \mqty(v^r \\ v^\theta) = \mqty(v^r \\ r^2 v^\theta) \neq v
 \end{align*}
-\textcolor{red}{It's better to denote \(g_{\mu\nu} v^\nu = v\mu\)}
+\textcolor{red}{It's better to denote \(g_{\mu\nu} v^\nu = v^\mu\)}
 \begin{problem}
   There is a catch here! What is it? I will explain shortly.
 \end{problem}
 \begin{remark}
-
+  \(v_\mu\) comprise the dual vector \(v^*\), linvingin a vector space different
+  from that of \(v\). You'd learnt this from a course of diff geometry; however,
+  here it's an overkill to distinguish \(v\) from \(v^*\), in order only to
+  understand EG.
 \end{remark}
+\[\textcolor{red}{\Rightarrow \abs{v}^2 = g_{\mu\nu} v^\mu v^\nu = v^\mu v^\mu} \quad
+  \textcolor{blue}{\text{called a contradiction of indices.}} \]
+\textcolor{red}{can only Einstein-sum a pair of upper \& lower indeices.} \\
+This implies \(v_\mu\) can be raised to \(v^\mu\) by the inverse
+\begin{align*}
+  g^{\mu\nu} v_\nu = v^\mu \\
+  g^{\mu\nu}g_{\nu\rho} = \delta^\mu_\rho
+\end{align*}
+\begin{remark}
+  Hereafter, \(\delta\) has both upper \& lower indices \(\xcancel{\delta^{\mu\nu}}, \xcancel{\delta_{\mu\nu}}\) unless in special cases.
+\end{remark}
+\textcolor{red}{Contracted index is a dummy index: \(v_\mu v^\mu = v_\nu v^\nu\).}
+
+\section{Curved space from change of coordinates}
+
+\subsection {3D euclidean space}
+\begin{align*}
+  \dd s^2 &= \dd x^2 + \dd y^2 + \dd z^2 \\
+          & \downarrow \text{spherical coordinates} \\
+          &= \dd r^2 + r^2 \dd \theta^2 + r^2 \sin ^2 \theta \dd \phi^2 \\
+          & \downarrow \text{take constant\ } r = a \\
+          &= a^2 \textcolor{red}{\underbrace{\textcolor{black}{\left( \dd \theta^2 + \sin^2 \theta \dd \phi^2 \right)}}} \\
+          & \text{\textcolor{red}{the length element on a sphere! curved!}}
+\end{align*}
+\begin{remark}
+  This is no big difference between curved spaces (spacetime) and your familiar
+  change of coordinates. So, nothing to be afraid of.
+\end{remark}
+But mathematically, how can you tell \(\dd s^2 = \dd \theta^2 + \sin^2 \theta
+\dd \phi^2\) describes a curved space? This is where we need \uwave{differential
+geometry}: \textcolor{red}{Given a metric, we can compute the curvature.}
+\begin{figure*}[h]
+  \centering
+  \includestandalone{Pictures/Four-cities}
+\end{figure*}
+\begin{remark}
+  Distance help you tell the curvature. The metric \(g_{\mu\nu}\) tells you
+  infinitesimal distances.
+\end{remark}
+
+\section{General coordinates transformation}
+The equivalence principle says that our spacetime is locally flat, or actually
+any curved space is locally flat. The locally flatness can be shown by
+coordinate transformation. In fact, the equivalence principle implies that
+coordinates do not have an intrinsic significance in geometry and physics. But
+since we can freely change coordinates, in a general curved space, how do we
+actually do the transformation, and how do the various quantities such as
+vectors and tensors are defined and transformed under change of coordinates?
+Recall what we did for rotations in \(D\)-dim Euclidean space.
+
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
 %----------------------------------------------------------------------------------------
@@ -570,6 +623,5 @@ Why upper \& lower? \\
 \end{document}
 
 % Local Variables:
-% TeX-engine: pdftex
 % TeX-command-extra-options: "-shell-escape"
 % End:
