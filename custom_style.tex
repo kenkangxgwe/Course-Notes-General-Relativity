@@ -2,10 +2,11 @@
 \usepackage[mode=buildnew]{standalone}
 \usepackage{ulem}
 \usepackage{physics}
+\usepackage{cancel}
 \setlength{\intextsep}{.5ex}
 
-\renewcommand{\dd}{\mathrm{d}}
-\renewcommand{\ee}{\mathrm{e}}
+\providecommand{\dd}{\mathrm{d}}
+\providecommand{\ee}{\mathrm{e}}
 
 \usetikzlibrary{calc}
 \usetikzlibrary{decorations.pathreplacing}
@@ -55,5 +56,5 @@ linewidth=4pt]{eBox}
 \leftmargin=35pt % Indentation on the left
 \rightmargin=25pt}\item\ignorespaces % Indentation on the right
 \makebox[-2.5pt]{\begin{tikzpicture}[overlay]
-\node[draw=blue!60,line width=1pt,circle,fill=blue!25,font=\sffamily\bfseries,inner sep=2pt,outer sep=0pt] at (-15pt,0pt){\textcolor{blue}{R}};\end{tikzpicture}} % Orange R in a circle
-\advance\baselineskip -1pt}{\end{list}\vskip5pt} % Tighter line spacing and white space after remark
+\node[draw=blue!60,line width=1pt,circle,fill=blue!25,font=\sffamily\bfseries,inner sep=2pt,outer sep=0pt] at (-15pt,0pt){\textcolor{blue}{R}};\end{tikzpicture}} % Blue R in a circle
+\advance\baselineskip -1pt \color{blue}}{\end{list}\vskip5pt} % Tighter line spacing and white space after remark
