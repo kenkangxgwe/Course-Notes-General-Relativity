@@ -3,8 +3,8 @@
 \LoadClassWithOptions{standalone}
 \RequirePackage{tikz}
 
-\RequirePackage{fontspec}
-\setmainfont{Comic Sans MS}
+% \RequirePackage{fontspec}
+% \setmainfont{Comic Sans MS}
 
 \usetikzlibrary{calc}
 \usetikzlibrary{decorations.pathreplacing}
